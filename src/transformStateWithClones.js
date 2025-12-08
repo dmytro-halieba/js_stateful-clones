@@ -32,7 +32,8 @@ function transformStateWithClones(state, actions) {
         break;
 
       default:
-        continue;
+        throw new Error(`
+          Action type "${action}" is not supported. Supported types: addProperties, removeProperties, clear`);
     }
 
     result.push(nextState);
